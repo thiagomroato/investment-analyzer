@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Investment Analyzer</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body { font-family: Arial; background:#0f172a; color:white; padding:20px }
+    input, button { padding:10px; margin:5px; border-radius:8px; border:none }
+    button { background:#22c55e; color:white; cursor:pointer }
+    .card { background:#1e293b; padding:15px; border-radius:12px; margin-top:20px }
+  </style>
+</head>
+<body>
+
+<h1>📊 Investment Analyzer</h1>
+
+<input id="ticker" placeholder="Digite o ticker (ex: PETR4)" />
+<button onclick="analyze()">Analisar</button>
+
+<div id="result"></div>
+
+<script>
+async function analyze() {
+  const ticker = document.getElementById('ticker').value;
+  const resultDiv = document.getElementById('result');
+
+  resultDiv.innerHTML = '⏳ Analisando...';
+
+  try {
+    const response = await axios.get(`http://localhost:5000/analyze?ticker=${ticker}`);
+
+    const data = response.data;
+
+    let html = `<div class='card'><h2>🏆 Ranking</h2>`;
+
+    data.results.forEach((r, i) => {
+      html += `<p>${i+1}º - ${r.nome} (${r.tipo}) | ${r.final.toFixed(2)}</p>`;
+    });
+
+    html += `</div>`;
+
+    html += `<div class='card'><h2>📊 Conclusão</h2>`;
+    html += `<p>${data.conclusao}</p></div>`;
+
+    resultDiv.innerHTML = html;
+
+  } catch (error) {
+    resultDiv.innerHTML = '❌ Erro ao conectar com o backend';
+  }
+}
+</script>
+
+</body>
+</html>

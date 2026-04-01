@@ -4,9 +4,10 @@ from strategies import *
 from seed import seed_assets
 
 app = Flask(__name__)
+
 create_tables()
 
-# Popular banco (executa uma vez)
+# Popula banco (evita duplicação simples)
 try:
     seed_assets()
 except:

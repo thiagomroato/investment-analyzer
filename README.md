@@ -1,35 +1,27 @@
-# 📊 Investment Analyzer
+# 📊 Investment Analyzer (GitHub Pages)
 
-Aplicação web para análise de ações baseada em estratégias de grandes investidores.
+Aplicação 100% frontend para análise de ações.
 
-## 🚀 Funcionalidades
+## 🚀 Funciona direto no navegador
 
-- Lista de ações BR e EUA
-- Input manual de métricas
-- Score baseado em:
-  - Peter Lynch
-  - Warren Buffett
-  - Ray Dalio
-  - Thiago Nigro
-  - Luiz Barsi
-- Decisão automática: BUY / HOLD / SELL
-- Histórico mensal salvo
+- Sem backend
+- Sem instalação
+- Usa LocalStorage para salvar dados
 
-## 🛠️ Tecnologias
+## 🌐 Acesse
 
-- Python
-- Flask
-- SQLite
+https://seu-usuario.github.io/investment-analyzer/
 
-## ▶️ Como rodar
+## 📊 Estratégias
 
-```bash
-git clone https://github.com/seu-usuario/investment-analyzer.git
-cd investment-analyzer
+- Peter Lynch
+- Warren Buffett
+- Ray Dalio
+- Thiago Nigro
+- Luiz Barsi
 
-python -m venv venv
-venv\Scripts\activate  # Windows
+## 📦 Deploy
 
-pip install -r requirements.txt
-
-python app.py
+1. Suba no GitHub
+2. Vá em Settings → Pages
+3. Selecione branch main / root

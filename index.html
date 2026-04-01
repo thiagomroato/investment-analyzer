@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📊 Investment Analyzer</h1>
+
+<label>Ação:</label><br>
+<select id="asset"></select><br><br>
+
+<input id="pl" placeholder="P/L"><br>
+<input id="roe" placeholder="ROE (%)"><br>
+<input id="dy" placeholder="Dividend Yield (%)"><br>
+<input id="debt" placeholder="Dívida"><br>
+<input id="growth" placeholder="Crescimento (%)"><br><br>
+
+<button onclick="analyze()">Analisar</button>
+
+<h2 id="result"></h2>
+
+<script src="assets.js"></script>
+<script src="strategies.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
